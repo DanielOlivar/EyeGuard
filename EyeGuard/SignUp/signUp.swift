@@ -19,7 +19,7 @@ struct signUp: View {
         VStack {
             Text("Crear cuenta")
                 .font(.title)
-                .foregroundStyle(Color.colorEyeGuard) // Asegúrate de que esta propiedad esté definida en tu proyecto
+                .foregroundStyle(Color.colorEyeGuard)
                 .bold()
                 .padding(.top,35)
             
@@ -56,7 +56,7 @@ struct signUp: View {
                 Button("Ok", role: .cancel){}
             }message: {
                 Text("Regresa a la página de inicio para iniciar sesión")
-            }.navigationBarBackButtonHidden(true) // Oculta el botón de atrás
+            }.navigationBarBackButtonHidden(true)
             
             Spacer()
             
@@ -91,9 +91,6 @@ struct signUp: View {
             mostrarAlerta = true
             print("Usuario registrado con éxito: \(String(describing: result?.user.email))")
         }
-        /*DispatchQueue.main.async {
-                    mostrarAlerta = true
-        }*/
     }
 }
 

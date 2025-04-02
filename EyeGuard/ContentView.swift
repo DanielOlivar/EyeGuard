@@ -31,7 +31,7 @@ struct ContentView: View {
             }
         }
         .padding()
-        .navigationBarBackButtonHidden(true) // Oculta el botón de atrás
+        .navigationBarBackButtonHidden(true) 
     }
 }
 
