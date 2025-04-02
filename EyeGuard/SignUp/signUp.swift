@@ -13,6 +13,7 @@ struct signUp: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var mostrarAlerta = false
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -55,10 +56,24 @@ struct signUp: View {
                 Button("Ok", role: .cancel){}
             }message: {
                 Text("Regresa a la página de inicio para iniciar sesión")
-            }
-            
+            }.navigationBarBackButtonHidden(true) // Oculta el botón de atrás
             
             Spacer()
+            
+            
+            Button(action: {
+                dismiss()
+            }) {
+                Text("Regresar")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 10)
+                    .background(Color.colorEyeGuard)
+                    .clipShape(RoundedRectangle(cornerRadius: 7))
+                    .padding(.top, 15)
+            }
+            
         }
     }
     

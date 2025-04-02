@@ -16,9 +16,10 @@ struct login: View {
     @State private var errorMessage: String? = nil
     @State private var showAlert = false  // Para mostrar la alerta
     @State private var alertMessage = ""  // Mensaje de la alerta
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        NavigationStack{
+        NavigationView{
             ZStack{
                 //Color.colorEyeGuard.ignoresSafeArea()
                 VStack{
@@ -63,9 +64,9 @@ struct login: View {
                             .clipShape(RoundedRectangle(cornerRadius: 7))
                             .padding(.top, 15)
                     }
-                    .navigationDestination(isPresented: $isLoggedIn) {
+                    .navigationDestination(isPresented: $isLoggedIn) { 
                         ContentView()
-                    }
+                    }.navigationBarBackButtonHidden(true)
                     
                     /*NavigationLink(destination: ContentView()){
                         Text("Ingresar")
@@ -86,6 +87,21 @@ struct login: View {
                         .foregroundStyle(Color.gray)
                         .padding(.top, 20)
                     
+                    Spacer()
+                    
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Text("Regresar")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 15)
+                            .padding(.vertical, 10)
+                            .background(Color.colorEyeGuard)
+                            .clipShape(RoundedRectangle(cornerRadius: 7))
+                            .padding(.top, 15)
+                    }
+                    
                     
                     HStack{
                         /*Image(systemName: "apple.logo")
@@ -104,7 +120,7 @@ struct login: View {
                                 .padding(.top, 15)
                         }*/
                     }
-                    Spacer()
+                    //Spacer()
                 }
             }
         }

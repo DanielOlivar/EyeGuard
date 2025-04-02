@@ -8,15 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
             Text("Puro pinche Simi OS 🦍")
                 .foregroundStyle(.cyan)
                 .font(.largeTitle)
+            
+            Spacer()
+            
+            Button(action: {
+                dismiss()
+            }) {
+                Text("Regresar")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 10)
+                    .background(Color.colorEyeGuard)
+                    .clipShape(RoundedRectangle(cornerRadius: 7))
+                    .padding(.top, 15)
+            }
         }
         .padding()
+        .navigationBarBackButtonHidden(true) // Oculta el botón de atrás
     }
 }
+
+#Preview {
+    ContentView()
+}
+
 
 #Preview {
     ContentView()

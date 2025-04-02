@@ -9,7 +9,7 @@ import SwiftUI
 
 struct home: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack{
                 Text("EyeGuard")
                     .font(.title)
