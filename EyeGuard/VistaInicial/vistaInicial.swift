@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct home: View {
+struct vistaInicial: View {
     var body: some View {
         NavigationStack {
             VStack{
@@ -81,5 +81,5 @@ extension Color {
 }
 
 #Preview {
-    home()
+    vistaInicial()
 }

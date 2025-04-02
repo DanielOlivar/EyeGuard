@@ -96,7 +96,7 @@ struct login: View {
         }
         
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if let error = error {
+            if error != nil {
                 DispatchQueue.main.async {
                     alertMessage = "Datos incorrectos, verifica tu correo y contraseña."
                     showAlert = true
