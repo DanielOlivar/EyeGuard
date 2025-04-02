@@ -52,8 +52,8 @@ struct Menu: View {
 
                 Spacer()
             }
-            .navigationBarHidden(true)
-        }
+            
+        }.navigationBarHidden(true)
     }
 }
 
