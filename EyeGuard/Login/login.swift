@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct login: View {
     var body: some View {
@@ -13,17 +15,15 @@ struct login: View {
             ZStack{
                 //Color.colorEyeGuard.ignoresSafeArea()
                 VStack{
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 85, height: 85)
-                        .padding(.top,50)
-                        .foregroundStyle(Color.colorEyeGuard)
                     Text("Iniciar sesión")
                         .font(.title)
-                        //.foregroundStyle(.white)
+                    //.foregroundStyle(.white)
                         .foregroundStyle(Color.colorEyeGuard)
                         .bold()
-                        //.padding(.top,50)
+                    .padding(.top,35)
+                    Image("logoEyeGuard")
+                        .resizable()
+                        .frame(width: 200, height: 200)
                     Text("Ingrese su dirección de correo electrónico")
                         .font(.caption)
                         .foregroundStyle(Color.colorEyeGuard)
@@ -54,7 +54,7 @@ struct login: View {
                         .foregroundStyle(Color.gray)
                         .padding(.top, 20)
                     HStack{
-                        Image(systemName: "apple.logo")
+                        /*Image(systemName: "apple.logo")
                             .resizable()
                             .frame(width: 45, height: 45)
                         NavigationLink(destination: signUp()){
@@ -68,7 +68,7 @@ struct login: View {
                                 .background(Color.colorEyeGuard)
                                 .clipShape(RoundedRectangle(cornerRadius: 7))
                                 .padding(.top, 15)
-                        }
+                        }*/
                     }
                     Spacer()
                 }
