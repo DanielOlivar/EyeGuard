@@ -64,7 +64,7 @@ struct login: View {
                 }
                 
                 .navigationDestination(isPresented: $isLoggedIn) {
-                    ContentView() // Aquí navegas a ContentView cuando isLoggedIn es true
+                    eyeSightTest() // Aquí navegas a ContentView cuando isLoggedIn es true
                 }.navigationBarBackButtonHidden(true)
                 
                 Text("Otras formas de inicio de sesión")
