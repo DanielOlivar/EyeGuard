@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 
 struct signUp: View {
+    
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var mostrarAlerta = false
@@ -21,7 +22,7 @@ struct signUp: View {
                 .font(.title)
                 .foregroundStyle(Color.colorEyeGuard)
                 .bold()
-                .padding(.top,35)
+                .padding(.top,15)
             
             
             Image("logoEyeGuard")

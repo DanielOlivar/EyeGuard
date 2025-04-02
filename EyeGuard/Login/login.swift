@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 
 struct login: View {
+    
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isLoggedIn = false
@@ -25,27 +26,40 @@ struct login: View {
                     .font(.title)
                     .foregroundStyle(Color.colorEyeGuard)
                     .bold()
-                    .padding(.top, 35)
+                    .padding(.top, 15)
                 
                 Image("logoEyeGuard")
                     .resizable()
                     .frame(width: 200, height: 200)
                 
                 Text("Ingrese su dirección de correo electrónico")
-                    .font(.caption)
+                    //.font(.title2)
                     .foregroundStyle(Color.colorEyeGuard)
+                    .padding(.top,10)
+                    .padding(.bottom, 15)
                 
                 TextField("Correo electrónico", text: $email)
                     .textFieldStyle(.roundedBorder)
-                    .frame(width: 200)
+                    .frame(width: 250)
                     .textInputAutocapitalization(.none)
                     .disableAutocorrection(true)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.colorEyeGuard, lineWidth: 1) // Aquí defines el color y el grosor del contorno
+                    )
+                    .padding(.bottom, 10)
+                    
                 
                 SecureField("Contraseña", text: $password)
                     .textFieldStyle(.roundedBorder)
-                    .frame(width: 200)
+                    .frame(width: 250)
                     .textInputAutocapitalization(.none)
                     .disableAutocorrection(true)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.colorEyeGuard, lineWidth: 1) // Aquí defines el color y el grosor del contorno
+                    )
+                    .padding(.bottom,10)
                 
                 Button(action: iniciarSesion) {
                     Text("Ingresar")

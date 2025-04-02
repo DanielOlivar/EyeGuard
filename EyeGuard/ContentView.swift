@@ -14,6 +14,7 @@ struct ContentView: View {
             Text("Puro pinche Simi OS 🦍")
                 .foregroundStyle(.cyan)
                 .font(.largeTitle)
+                .padding(.top,15)
             
             Spacer()
             

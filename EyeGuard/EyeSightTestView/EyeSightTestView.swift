@@ -59,7 +59,6 @@ struct EyeSightTestView: View {
             
             Spacer()
         }
-        .background(Color(red: 1.0, green: 0.97, blue: 0.93).edgesIgnoringSafeArea(.all))
     }
 }
 
