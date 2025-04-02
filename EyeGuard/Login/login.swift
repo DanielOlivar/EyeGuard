@@ -19,115 +19,73 @@ struct login: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                //Color.colorEyeGuard.ignoresSafeArea()
-                VStack{
-                    Text("Iniciar sesión")
-                        .font(.title)
-                        .foregroundStyle(Color.colorEyeGuard)
-                        .bold()
-                        .padding(.top,35)
-                    
-                    
-                    Image("logoEyeGuard")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                    
-                    
-                    Text("Ingrese su dirección de correo electrónico")
-                        .font(.caption)
-                        .foregroundStyle(Color.colorEyeGuard)
-                    
-                    
-                    TextField("Correo electrónico", text: $email)
-                        .textFieldStyle(.roundedBorder)
-                        .frame(width: 200)
-                        .textInputAutocapitalization(.none)
-                        .disableAutocorrection(true)
-                        .textInputAutocapitalization(.never)
-                   
-                    
-                    SecureField("Contraseña", text: $password)
-                        .textFieldStyle(.roundedBorder)
-                        .frame(width: 200)
-                        .textInputAutocapitalization(.none)
-                        .disableAutocorrection(true)
-                    
-                    Button(action: iniciarSesion) {
-                        Text("Ingresar")
-                            .font(.headline)
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 15)
-                            .padding(.vertical, 10)
-                            .background(Color.colorEyeGuard)
-                            .clipShape(RoundedRectangle(cornerRadius: 7))
-                            .padding(.top, 15)
-                    }
-                    .navigationDestination(isPresented: $isLoggedIn) { 
-                        ContentView()
-                    }.navigationBarBackButtonHidden(true)
-                    
-                    /*NavigationLink(destination: ContentView()){
-                        Text("Ingresar")
-                            .font(.headline)
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 15)
-                            .padding(.vertical, 10)
-                            .background(Color.colorEyeGuard)
-                            .clipShape(RoundedRectangle(cornerRadius: 7))
-                            .padding(.top, 15)
-                            .onTapGesture{
-                                iniciarSesion()
-                            }
-                    }*/
-                    
-                    
-                    Text("Otras formas de inicio de sesión")
-                        .foregroundStyle(Color.gray)
-                        .padding(.top, 20)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Text("Regresar")
-                            .font(.headline)
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 15)
-                            .padding(.vertical, 10)
-                            .background(Color.colorEyeGuard)
-                            .clipShape(RoundedRectangle(cornerRadius: 7))
-                            .padding(.top, 15)
-                    }
-                    
-                    
-                    HStack{
-                        /*Image(systemName: "apple.logo")
-                            .resizable()
-                            .frame(width: 45, height: 45)
-                        NavigationLink(destination: signUp()){
-                            Text("Continuar con Google")
-                                .font(.headline)
-                            //.foregroundStyle(Color.colorEyeGuard)
-                                .foregroundStyle(.white)
-                                .padding(.horizontal, 15)
-                                .padding(.vertical, 10)
-                            //.background(Color.white)
-                                .background(Color.colorEyeGuard)
-                                .clipShape(RoundedRectangle(cornerRadius: 7))
-                                .padding(.top, 15)
-                        }*/
-                    }
-                    //Spacer()
+        ZStack {
+            VStack {
+                Text("Iniciar sesión")
+                    .font(.title)
+                    .foregroundStyle(Color.colorEyeGuard)
+                    .bold()
+                    .padding(.top, 35)
+                
+                Image("logoEyeGuard")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                
+                Text("Ingrese su dirección de correo electrónico")
+                    .font(.caption)
+                    .foregroundStyle(Color.colorEyeGuard)
+                
+                TextField("Correo electrónico", text: $email)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 200)
+                    .textInputAutocapitalization(.none)
+                    .disableAutocorrection(true)
+                
+                SecureField("Contraseña", text: $password)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 200)
+                    .textInputAutocapitalization(.none)
+                    .disableAutocorrection(true)
+                
+                Button(action: iniciarSesion) {
+                    Text("Ingresar")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .background(Color.colorEyeGuard)
+                        .clipShape(RoundedRectangle(cornerRadius: 7))
+                        .padding(.top, 15)
+                }
+                .alert("Error", isPresented: $showAlert) {
+                    Button("OK", role: .cancel) {}
+                } message: {
+                    Text(alertMessage)
+                }
+                
+                .navigationDestination(isPresented: $isLoggedIn) {
+                    ContentView() // Aquí navegas a ContentView cuando isLoggedIn es true
+                }.navigationBarBackButtonHidden(true)
+                
+                Text("Otras formas de inicio de sesión")
+                    .foregroundStyle(Color.gray)
+                    .padding(.top, 20)
+                
+                Spacer()
+                
+                Button(action: {
+                    dismiss()
+                }) {
+                    Text("Regresar")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .background(Color.colorEyeGuard)
+                        .clipShape(RoundedRectangle(cornerRadius: 7))
+                        .padding(.top, 15)
                 }
             }
-        }
-        .alert("Error", isPresented: $showAlert) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(alertMessage)
         }
     }
     
@@ -139,24 +97,23 @@ struct login: View {
         
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                // Mostrar el error en pantalla
                 DispatchQueue.main.async {
                     alertMessage = "Datos incorrectos, verifica tu correo y contraseña."
                     showAlert = true
-                    isLoggedIn = false // Asegurarse de que no se navegue si hay error
+                    isLoggedIn = false
                 }
                 return
             }
 
-            // Si no hay error, iniciar sesión correctamente
             DispatchQueue.main.async {
-                isLoggedIn = true
+                isLoggedIn = true // Inicia sesión correctamente
                 showAlert = false
-                errorMessage = nil // Limpiar mensaje de error si fue exitoso
+                errorMessage = nil // Limpiar mensaje de error
             }
         }
     }
 }
+
 
 
 #Preview {
