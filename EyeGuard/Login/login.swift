@@ -78,7 +78,7 @@ struct login: View {
                 }
                 
                 .navigationDestination(isPresented: $isLoggedIn) {
-                    EyeSightTestView() 
+                    MainTabView()
                 }.navigationBarBackButtonHidden(true)
                 
                 Text("Otras formas de inicio de sesión")
