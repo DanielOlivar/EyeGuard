@@ -18,6 +18,7 @@ struct misDatosVisuales: View {
     @State private var oiCIL: String = ""
     @State private var oiEJE: String = ""
     @State private var comentarios: String = ""
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack{
@@ -162,8 +163,6 @@ struct misDatosVisuales: View {
                             .stroke(Color.colorEyeGuard, lineWidth: 1)
                 )
             
-            
-            Spacer()
             Button(action: {
                 
             }) {
@@ -176,8 +175,23 @@ struct misDatosVisuales: View {
                     .clipShape(RoundedRectangle(cornerRadius: 7))
                     .padding(.top, 15)
             }
+            
+            Spacer()
+            
+            Button(action: {
+                dismiss()
+            }) {
+                Text("Regresar")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 10)
+                    .background(Color.colorEyeGuard)
+                    .clipShape(RoundedRectangle(cornerRadius: 7))
+                    .padding(.top, 15)
+            }
             //Spacer()
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

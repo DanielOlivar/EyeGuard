@@ -27,25 +27,36 @@ struct Menu: View {
                 }
                 .padding(.top, 30)
 
-                // Grid de opciones
+                // Grid de opciones con NavigationLink
                 LazyVGrid(columns: gridItems, spacing: 20) {
-                    OpcionTarjeta(icono: "eye", titulo: "Evaluar mi visión")
-                    OpcionTarjeta(icono: "doc.text.viewfinder", titulo: "Mis datos visuales")
-                    OpcionTarjeta(icono: "chart.bar.xaxis", titulo: "Mi progreso visual")
-                    OpcionTarjeta(icono: "stethoscope", titulo: "Terapia ocular")
-                    OpcionTarjeta(icono: "lightbulb", titulo: "Recomendaciones")
-                    OpcionTarjeta(icono: "mappin.and.ellipse", titulo: "Especialista cerca")
+                    NavigationLink(destination: misDatosVisuales()) {
+                        OpcionTarjeta(icono: "eye", titulo: "Evaluar mi visión")
+                    }.navigationBarBackButtonHidden(true)
+                    NavigationLink(destination: misDatosVisuales()) {
+                        OpcionTarjeta(icono: "doc.text.viewfinder", titulo: "Mis datos visuales")
+                    }.navigationBarBackButtonHidden(true)
+                    NavigationLink(destination: misDatosVisuales()) {
+                        OpcionTarjeta(icono: "chart.bar.xaxis", titulo: "Mi progreso visual")
+                    }.navigationBarBackButtonHidden(true)
+                    NavigationLink(destination: misDatosVisuales()) {
+                        OpcionTarjeta(icono: "stethoscope", titulo: "Terapia ocular")
+                    }.navigationBarBackButtonHidden(true)
+                    NavigationLink(destination: misDatosVisuales()) {
+                        OpcionTarjeta(icono: "lightbulb", titulo: "Recomendaciones")
+                    }.navigationBarBackButtonHidden(true)
+                    NavigationLink(destination: misDatosVisuales()) {
+                        OpcionTarjeta(icono: "mappin.and.ellipse", titulo: "Especialista cerca")
+                    }.navigationBarBackButtonHidden(true)
                 }
                 .padding()
 
                 Spacer()
-                
-                //MainTabView()
             }
             .navigationBarHidden(true)
         }
     }
 }
+
 
 struct OpcionTarjeta: View {
     var icono: String

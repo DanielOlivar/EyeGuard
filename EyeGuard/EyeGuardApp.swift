@@ -22,7 +22,7 @@ struct EyeGuardApp: App {
     var body: some Scene {
         WindowGroup {
             //vistaInicial()
-            misDatosVisuales()
+            Menu()
         }
     }
 }
