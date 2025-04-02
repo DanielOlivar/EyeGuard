@@ -45,7 +45,7 @@ struct login: View {
                     .disableAutocorrection(true)
                     .overlay(
                             RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.colorEyeGuard, lineWidth: 1) // Aquí defines el color y el grosor del contorno
+                                .stroke(Color.colorEyeGuard, lineWidth: 1)
                     )
                     .padding(.bottom, 10)
                     
@@ -57,7 +57,7 @@ struct login: View {
                     .disableAutocorrection(true)
                     .overlay(
                             RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.colorEyeGuard, lineWidth: 1) // Aquí defines el color y el grosor del contorno
+                                .stroke(Color.colorEyeGuard, lineWidth: 1)
                     )
                     .padding(.bottom,10)
                 
@@ -122,7 +122,7 @@ struct login: View {
             DispatchQueue.main.async {
                 isLoggedIn = true // Inicia sesión correctamente
                 showAlert = false
-                errorMessage = nil // Limpiar mensaje de error
+                errorMessage = nil
             }
         }
     }

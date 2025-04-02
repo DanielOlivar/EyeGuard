@@ -16,8 +16,6 @@ struct EyeSightTestView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            
-            // Título
             VStack(alignment: .leading, spacing: 5) {
                 Text("Test de")
                     .font(.title)
@@ -31,7 +29,7 @@ struct EyeSightTestView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
             
-            // Campos de texto
+            
             Group {
                 TextField("Nombre", text: $nombre)
                 TextField("Edad", text: $edad)
@@ -43,7 +41,7 @@ struct EyeSightTestView: View {
             .cornerRadius(12)
             .padding(.horizontal)
             
-            // Botón
+            
             Button(action: {
                 // Acción al registrarse
                 print("Registrado: \(nombre), \(edad), \(problemaVisual)")

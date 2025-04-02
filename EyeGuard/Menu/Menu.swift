@@ -13,8 +13,6 @@ struct Menu: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
-                
-                // Título y logo
                 VStack(spacing: 10) {
                     Text("EyeGuard")
                         .font(.title)

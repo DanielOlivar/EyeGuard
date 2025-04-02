@@ -27,11 +27,6 @@ struct misDatosVisuales: View {
                 .foregroundStyle(Color.colorEyeGuard)
                 .bold()
                 .padding(.top, 15)
-                
-            
-            /*Text("Consulta y lentes")
-                .foregroundStyle(Color.colorEyeGuard)
-                .padding(.top, 15)*/
             
             
             DatePicker(
@@ -44,11 +39,8 @@ struct misDatosVisuales: View {
                 .foregroundStyle(Color.colorEyeGuard)
                 .bold()
                 .font(.title3)
-                /*.background(Color.colorEyeGuard)
-                .overlay(
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.colorEyeGuard, lineWidth: 1)
-                )*/
+            
+            
             HStack{
                 Text("¿Usas lentes?")
                     .foregroundStyle(Color.colorEyeGuard)
@@ -60,11 +52,14 @@ struct misDatosVisuales: View {
                     .tint(Color.colorEyeGuard)
             }.frame(maxWidth: .infinity)
             
+            
             Text("Receta ótpica")
                 .foregroundStyle(Color.colorEyeGuard)
                 .padding(.top,15)
                 .bold()
                 .padding(.bottom, 20)
+            
+            
             HStack{
                 Text(" ")
                 Text(" ")
@@ -75,6 +70,8 @@ struct misDatosVisuales: View {
                 Text(" EJE")
                     .foregroundStyle(Color.colorEyeGuard)
             }
+            
+            
             HStack{
                 Text("OD")
                     .foregroundStyle(Color.colorEyeGuard)
@@ -88,6 +85,8 @@ struct misDatosVisuales: View {
                                 .stroke(Color.colorEyeGuard, lineWidth: 1)
                     )
                     .padding(.bottom, 10)
+                
+                
                 TextField(" ", text: $odCIL)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 35)
@@ -98,6 +97,8 @@ struct misDatosVisuales: View {
                                 .stroke(Color.colorEyeGuard, lineWidth: 1)
                     )
                     .padding(.bottom, 10)
+                
+                
                 TextField(" ", text: $odEJE)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 35)
@@ -109,10 +110,16 @@ struct misDatosVisuales: View {
                     )
                     .padding(.bottom, 10)
             }
+            
+            
             HStack{
                 Text("OI")
                     .foregroundStyle(Color.colorEyeGuard)
+                
+                
                 Text("")
+                
+                
                 TextField(" ", text: $oiESF)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 35)
@@ -123,6 +130,8 @@ struct misDatosVisuales: View {
                                 .stroke(Color.colorEyeGuard, lineWidth: 1)
                     )
                     .padding(.bottom, 10)
+                
+                
                 TextField(" ", text: $oiCIL)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 35)
@@ -133,6 +142,8 @@ struct misDatosVisuales: View {
                                 .stroke(Color.colorEyeGuard, lineWidth: 1)
                     )
                     .padding(.bottom, 10)
+                
+                
                 TextField(" ", text: $oiEJE)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 35)

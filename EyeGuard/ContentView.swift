@@ -16,7 +16,9 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .padding(.top,15)
             
+            
             Spacer()
+            
             
             Button(action: {
                 dismiss()
@@ -40,7 +42,3 @@ struct ContentView: View {
     ContentView()
 }
 
-
-#Preview {
-    ContentView()
-}
