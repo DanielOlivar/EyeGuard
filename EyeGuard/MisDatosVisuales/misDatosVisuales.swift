@@ -17,6 +17,7 @@ struct misDatosVisuales: View {
     @State private var oiESF: String = ""
     @State private var oiCIL: String = ""
     @State private var oiEJE: String = ""
+    @State private var comentarios: String = ""
     
     var body: some View {
         VStack{
@@ -151,7 +152,7 @@ struct misDatosVisuales: View {
                 .bold()
             
             
-            TextField(" ", text: $oiESF)
+            TextField(" ", text: $comentarios)
                 .textFieldStyle(.roundedBorder)
                 .frame(width: 300, height: 250)
                 .textInputAutocapitalization(.none)
