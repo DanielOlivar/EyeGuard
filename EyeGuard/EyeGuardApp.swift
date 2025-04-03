@@ -2,7 +2,7 @@
 //  EyeGuardApp.swift
 //  EyeGuard
 //
-//  Created by Sistemas on 31/03/25.
+//  Created by Alumno on 03/04/25
 //
 
 import SwiftUI

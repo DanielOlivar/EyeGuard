@@ -2,7 +2,7 @@
 //  misDatosVisuales.swift
 //  EyeGuard
 //
-//  Created by Sistemas on 02/04/25.
+//  Created by Alumno on 03/04/25
 //
 
 import SwiftUI

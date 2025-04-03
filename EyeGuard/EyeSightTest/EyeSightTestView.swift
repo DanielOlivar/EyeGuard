@@ -2,7 +2,7 @@
 //  EyeSightTest.swift
 //  EyeGuard
 //
-//  Created by Alexis Sanchez on 01/04/25.
+//  Created by Alumno on 03/04/25
 //
 
 import SwiftUI
