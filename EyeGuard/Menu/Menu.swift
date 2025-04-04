@@ -28,7 +28,7 @@ struct Menu: View {
 
                 // Grid de opciones con NavigationLink
                 LazyVGrid(columns: gridItems, spacing: 20) {
-                    NavigationLink(destination: misDatosVisuales()) {
+                    NavigationLink(destination: VisualTestsSelection()) {
                         OpcionTarjeta(icono: "eye", titulo: "Evaluar mi visión")
                     }
                     NavigationLink(destination: misDatosVisuales()) {
