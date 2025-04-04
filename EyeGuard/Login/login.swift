@@ -99,6 +99,23 @@ struct login: View {
                         .clipShape(RoundedRectangle(cornerRadius: 7))
                         .padding(.top, 15)
                 }
+                .onAppear {
+                    
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+                //MARK: Toolbar
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("EyeGuard")
+                            .font(.system(.title)) // Cambia el tamaño de la fuente
+                            .foregroundColor(.white) // Cambia el color del título
+                            .bold()
+                    }
+                }
+                .toolbarBackground(Color.colorEyeGuard, for: .navigationBar)
+                .toolbarBackgroundVisibility(.visible)
+                .navigationBarBackButtonHidden(true)
             }
         }
     }

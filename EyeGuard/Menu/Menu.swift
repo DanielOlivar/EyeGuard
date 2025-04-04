@@ -14,11 +14,6 @@ struct Menu: View {
         NavigationView {
             VStack(spacing: 16) {
                 VStack(spacing: 10) {
-                    Text("EyeGuard")
-                        .font(.title)
-                        .foregroundStyle(Color.colorEyeGuard)
-                        .bold()
-                    
                     Image("logoEyeGuard")
                         .resizable()
                         .frame(width: 100, height: 100)
@@ -29,31 +24,46 @@ struct Menu: View {
                 LazyVGrid(columns: gridItems, spacing: 20) {
                     NavigationLink(destination: misDatosVisuales()) {
                         OpcionTarjeta(icono: "eye", titulo: "Evaluar mi visión")
-                    }.navigationBarBackButtonHidden(true)
+                    }
                     NavigationLink(destination: misDatosVisuales()) {
                         OpcionTarjeta(icono: "doc.text.viewfinder", titulo: "Mis datos visuales")
-                    }.navigationBarBackButtonHidden(true)
+                    }
                     NavigationLink(destination: misDatosVisuales()) {
                         OpcionTarjeta(icono: "chart.bar.xaxis", titulo: "Mi progreso visual")
-                    }.navigationBarBackButtonHidden(true)
+                    }
                     NavigationLink(destination: misDatosVisuales()) {
                         OpcionTarjeta(icono: "stethoscope", titulo: "Terapia ocular")
-                    }.navigationBarBackButtonHidden(true)
+                    }
                     NavigationLink(destination: misDatosVisuales()) {
                         OpcionTarjeta(icono: "lightbulb", titulo: "Recomendaciones")
-                    }.navigationBarBackButtonHidden(true)
-                    NavigationLink(destination: misDatosVisuales()) {
+                    }
+                    NavigationLink(destination: especialistaCerca()) {
                         OpcionTarjeta(icono: "mappin.and.ellipse", titulo: "Especialista cerca")
-                    }.navigationBarBackButtonHidden(true)
+                    }
                 }
                 .padding()
 
                 Spacer()
             }
-            
-        }.navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                
+            }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("EyeGuard")
+                        .font(.system(.title)) // Cambia el tamaño de la fuente
+                        .foregroundColor(.white) // Cambia el color del título
+                        .bold()
+                }
+            }
+            .toolbarBackground(Color.colorEyeGuard, for: .navigationBar)
+            .toolbarBackgroundVisibility(.visible)
+        }
     }
 }
+
 
 
 struct OpcionTarjeta: View {
