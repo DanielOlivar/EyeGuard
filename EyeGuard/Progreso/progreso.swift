@@ -1,5 +1,5 @@
 //
-//  terapiaParpadeo.swift
+//  progreso.swift
 //  EyeGuard
 //
 //  Created by Sistemas on 04/04/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct terapiaParpadeo: View {
+struct progreso: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -15,12 +15,16 @@ struct terapiaParpadeo: View {
             Image("logoEyeGuard")
                 .resizable()
                 .frame(width: 200, height: 200)
-            Text("Parpadeo consciente")
+            Text("Mi progreso")
                 .bold()
                 .font(.title)
                 .foregroundStyle(Color.colorEyeGuard)
                 .padding(.top,20)
-            Text("Cierra los ojos lentamente, suavemente aprieta los párpados durante algunos segundos y luego ábrelos del todo para lubricarlos.")
+            Text("Realiza al menos 3 test para obtener resultados más precisos con la ayuda de las evaluaciones de vista")
+                .font(.title3)
+                .padding(.horizontal,20)
+                .padding(.top,15)
+            Text("Recuerda que el uso de EyeGuard NO sustituye la consulta con un especialista.")
                 .font(.title3)
                 .padding(.horizontal,20)
                 .padding(.top,15)
@@ -65,5 +69,5 @@ struct terapiaParpadeo: View {
 }
 
 #Preview {
-    terapiaParpadeo()
+    progreso()
 }

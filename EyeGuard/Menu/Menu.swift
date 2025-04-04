@@ -34,7 +34,7 @@ struct Menu: View {
                     NavigationLink(destination: misDatosVisuales()) {
                         OpcionTarjeta(icono: "doc.text.viewfinder", titulo: "Mis datos visuales")
                     }
-                    NavigationLink(destination: misDatosVisuales()) {
+                    NavigationLink(destination: progreso()) {
                         OpcionTarjeta(icono: "chart.bar.xaxis", titulo: "Mi progreso visual")
                     }
                     NavigationLink(destination: terapias()) {

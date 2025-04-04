@@ -16,16 +16,10 @@ struct MainTabView: View {
                     Image(systemName: "house.fill")
                     Text("Inicio")
                 }
-            Profile()
-                .tabItem {
-                    Image(systemName: "person.circle.fill")
-                    Text("Perfil")
-                }
-
             Settings() 
                 .tabItem {
-                    Image(systemName: "gearshape.fill")
-                    Text("Configuración")
+                    Image(systemName: "info.circle.fill")
+                    Text("Info")
                 }
         }
         .accentColor(.colorEyeGuard)
