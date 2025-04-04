@@ -166,7 +166,7 @@ struct misDatosVisuales: View {
             
             TextField(" ", text: $comentarios)
                 .textFieldStyle(.roundedBorder)
-                .frame(width: 300, height: 250)
+                .frame(width: 200, height: 150)
                 .textInputAutocapitalization(.none)
                 .disableAutocorrection(true)
                 .overlay(

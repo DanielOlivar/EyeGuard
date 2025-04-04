@@ -26,7 +26,7 @@ struct especialistaCerca: View {
 
     var body: some View {
         VStack {
-            Text("Especialistas de la")
+            Text("Especialistas cerca")
                 .foregroundStyle(Color.colorEyeGuard)
                 .font(.title)
                 .bold()
@@ -34,12 +34,6 @@ struct especialistaCerca: View {
                 .multilineTextAlignment(.center)
                 .frame(alignment: .center)
                 .padding(.horizontal, 5)
-            Text("salud visual")
-                .foregroundStyle(Color.colorEyeGuard)
-                .font(.title)
-                .bold()
-                .multilineTextAlignment(.center)
-                .frame(alignment: .center)
                 
             Text("EyeGuard recomienda especialistas de:")
                 //.foregroundStyle(Color.colorEyeGuard)

@@ -1,5 +1,5 @@
 //
-//  terapiaPalma.swift
+//  recomendaciones.swift
 //  EyeGuard
 //
 //  Created by Sistemas on 04/04/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct terapiaPalma: View {
+struct recomendaciones: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -15,19 +15,39 @@ struct terapiaPalma: View {
             Image("logoEyeGuard")
                 .resizable()
                 .frame(width: 200, height: 200)
-            Text("Palmeo relajante")
+            Text("Recomendaciones")
                 .bold()
                 .font(.title)
                 .foregroundStyle(Color.colorEyeGuard)
                 .padding(.top,20)
-            Text("Cubre suavemente ambos ojos con las manos durante unos minutos para relajarlos.")
+            Text("1. Tomar descansos regulares")
                 .font(.title3)
-                .padding(.horizontal,20)
+                //.padding(.horizontal,20)
                 .padding(.top,15)
-            Image(systemName: "hand.pinch")
+                .padding(.leading,15)
+                .foregroundStyle(Color.colorEyeGuard)
+            
+            Text("Tomar descansos regulares de la pantalla puede ayudar a proteger la vista, es recomendable hacer una pausa de 5 minutos cada hora.")
+                .font(.title3)
+               // .padding(.horizontal,20)
+                .padding(.top,15)
+                .padding(.leading,20)
+            Text("2. Usar filtros de luz azul")
+                .font(.title3)
+                //.padding(.horizontal,20)
+                .padding(.top,15)
+                .padding(.leading,15)
+                .foregroundStyle(Color.colorEyeGuard)
+            
+            Text("Usar lentes o monitores con filtros de luz azul ayudan considerablemente la fatiga muscular ocacionada por estar mucho tiempo delante de la pantalla.")
+                .font(.title3)
+               // .padding(.horizontal,20)
+                .padding(.top,15)
+                .padding(.leading,20)
+            Image(systemName: "checkmark.circle")
                 .resizable()
                 .foregroundStyle(Color.colorEyeGuard)
-                .frame(width: 130, height: 90)
+                .frame(width: 90, height: 90)
                 .padding(.top, 40)
             
             Spacer()
@@ -65,5 +85,5 @@ struct terapiaPalma: View {
 }
 
 #Preview {
-    terapiaPalma()
+    recomendaciones()
 }

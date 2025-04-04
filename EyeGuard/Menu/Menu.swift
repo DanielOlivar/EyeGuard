@@ -40,7 +40,7 @@ struct Menu: View {
                     NavigationLink(destination: terapias()) {
                         OpcionTarjeta(icono: "stethoscope", titulo: "Terapia ocular")
                     }
-                    NavigationLink(destination: misDatosVisuales()) {
+                    NavigationLink(destination: recomendaciones()) {
                         OpcionTarjeta(icono: "lightbulb", titulo: "Recomendaciones")
                     }
                     NavigationLink(destination: especialistaCerca()) {

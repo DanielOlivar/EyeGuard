@@ -81,9 +81,9 @@ struct login: View {
                     MainTabView()
                 }.navigationBarBackButtonHidden(true)
                 
-                Text("Otras formas de inicio de sesión")
+                /*Text("Otras formas de inicio de sesión")
                     .foregroundStyle(Color.gray)
-                    .padding(.top, 20)
+                    .padding(.top, 20)*/
                 
                 Spacer()
                 

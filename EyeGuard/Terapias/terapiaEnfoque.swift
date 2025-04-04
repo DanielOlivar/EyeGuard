@@ -75,6 +75,7 @@ struct terapiaEnfoque: View {
         }
     }
 }
+
 #Preview {
     terapiaEnfoque()
 }

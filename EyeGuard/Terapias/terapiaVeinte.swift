@@ -28,6 +28,7 @@ struct terapiaVeinte: View {
                 .resizable()
                 .foregroundStyle(Color.colorEyeGuard)
                 .frame(width: 80, height: 80)
+                .padding(.top, 40)
             
             Spacer()
             Button(action: {

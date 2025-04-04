@@ -24,7 +24,7 @@ struct terapiaParpadeo: View {
                 .font(.title3)
                 .padding(.horizontal,20)
                 .padding(.top,15)
-            Image(systemName: "hand.pinch")
+            Image(systemName: "eye")
                 .resizable()
                 .foregroundStyle(Color.colorEyeGuard)
                 .frame(width: 130, height: 90)
