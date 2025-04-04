@@ -1,62 +1,47 @@
 //
-//  Menu.swift
+//  terapias.swift
 //  EyeGuard
 //
-//  Created by Alumno on 03/04/25
+//  Created by Sistemas on 04/04/25.
 //
 
 import SwiftUI
 
-struct Menu: View {
-    let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
-    
+struct terapias: View {
+    let gridItemsTerapia = [GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                VStack(spacing: 10) {
-                    Text("Inicio")
+        NavigationView{
+            VStack{
+                VStack {
+                    Text("Terapias")
                         .font(.title)
                         .foregroundStyle(Color.colorEyeGuard)
                         .bold()
-                        .padding(.top, 10)
-                    
                     Image("logoEyeGuard")
                         .resizable()
-                        .frame(width: 100, height: 100)
+                        .frame(width: 200, height: 200)
                 }
-                .padding(.top, 30)
-
-                // Grid de opciones con NavigationLink
-                LazyVGrid(columns: gridItems, spacing: 20) {
-                    NavigationLink(destination: VisualTestsSelection()) {
-                        OpcionTarjeta(icono: "eye", titulo: "Evaluar mi visión")
+                LazyVGrid(columns: gridItemsTerapia, spacing: 20) {
+                    NavigationLink(destination: terapiaVeinte()) {
+                        OpcionTarjeta(icono: "stopwatch", titulo: "Terapia 20-20-20")
                     }
                     NavigationLink(destination: misDatosVisuales()) {
-                        OpcionTarjeta(icono: "doc.text.viewfinder", titulo: "Mis datos visuales")
+                        OpcionTarjeta(icono: "target", titulo: "Enfoque cercano y lejano")
                     }
                     NavigationLink(destination: misDatosVisuales()) {
-                        OpcionTarjeta(icono: "chart.bar.xaxis", titulo: "Mi progreso visual")
-                    }
-                    NavigationLink(destination: terapias()) {
-                        OpcionTarjeta(icono: "stethoscope", titulo: "Terapia ocular")
+                        OpcionTarjeta(icono: "eye", titulo: "Parpadeo consciente")
                     }
                     NavigationLink(destination: misDatosVisuales()) {
-                        OpcionTarjeta(icono: "lightbulb", titulo: "Recomendaciones")
-                    }
-                    NavigationLink(destination: especialistaCerca()) {
-                        OpcionTarjeta(icono: "mappin.and.ellipse", titulo: "Especialista cerca")
+                        OpcionTarjeta(icono: "hand.pinch", titulo: "Palmeo relajante")
                     }
                 }
                 .navigationBarBackButtonHidden(true)
                 .padding()
-
+                
                 Spacer()
             }
+        }
     }
-}
-
-
-
     struct OpcionTarjeta: View {
         var icono: String
         var titulo: String
@@ -83,7 +68,6 @@ struct Menu: View {
     }
 }
 
-
 #Preview {
-    Menu()
+    terapias()
 }
