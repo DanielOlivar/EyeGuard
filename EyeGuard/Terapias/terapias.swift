@@ -8,40 +8,71 @@
 import SwiftUI
 
 struct terapias: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     let gridItemsTerapia = [GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
-        NavigationView{
-            VStack{
+        NavigationView {
+            VStack {
                 VStack {
                     Text("Terapias")
                         .font(.title)
                         .foregroundStyle(Color.colorEyeGuard)
                         .bold()
+                        .padding(.top, 20)
+                    
                     Image("logoEyeGuard")
                         .resizable()
                         .frame(width: 200, height: 200)
                 }
+                
                 LazyVGrid(columns: gridItemsTerapia, spacing: 20) {
                     NavigationLink(destination: terapiaVeinte()) {
                         OpcionTarjeta(icono: "stopwatch", titulo: "Terapia 20-20-20")
                     }
-                    NavigationLink(destination: misDatosVisuales()) {
+                    NavigationLink(destination: terapiaEnfoque()) {
                         OpcionTarjeta(icono: "target", titulo: "Enfoque cercano y lejano")
                     }
-                    NavigationLink(destination: misDatosVisuales()) {
+                    NavigationLink(destination: terapiaParpadeo()) {
                         OpcionTarjeta(icono: "eye", titulo: "Parpadeo consciente")
                     }
-                    NavigationLink(destination: misDatosVisuales()) {
+                    NavigationLink(destination: terapiaPalma()) {
                         OpcionTarjeta(icono: "hand.pinch", titulo: "Palmeo relajante")
                     }
                 }
-                .navigationBarBackButtonHidden(true)
-                .padding()
                 
                 Spacer()
+                
+                Button(action: {
+                    dismiss()
+                }) {
+                    Text("Regresar")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .background(Color.colorEyeGuard)
+                        .clipShape(RoundedRectangle(cornerRadius: 7))
+                        .padding(.top, 15)
+                }
             }
-        }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("EyeGuard")
+                        .font(.system(.title))
+                        .foregroundColor(.white)
+                        .bold()
+                }
+            }.navigationBarBackButtonHidden(true)
+            .toolbarBackground(Color.colorEyeGuard, for: .navigationBar)
+            .toolbarBackgroundVisibility(.visible)
+        }.navigationBarBackButtonHidden(true)
     }
+
     struct OpcionTarjeta: View {
         var icono: String
         var titulo: String
@@ -71,3 +102,4 @@ struct terapias: View {
 #Preview {
     terapias()
 }
+

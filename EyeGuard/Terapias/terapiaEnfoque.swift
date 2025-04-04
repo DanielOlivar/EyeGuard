@@ -1,5 +1,5 @@
 //
-//  terapiaVeinte.swift
+//  terapiaEnfoque.swift
 //  EyeGuard
 //
 //  Created by Sistemas on 04/04/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct terapiaVeinte: View {
+struct terapiaEnfoque: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -15,19 +15,32 @@ struct terapiaVeinte: View {
             Image("logoEyeGuard")
                 .resizable()
                 .frame(width: 200, height: 200)
-            Text("Terapia 20-20-20")
+            Text("Enfoque cercano-lejano")
                 .bold()
                 .font(.title)
                 .foregroundStyle(Color.colorEyeGuard)
                 .padding(.top,20)
-            Text("Cada 20 minutos, mira a una distancia de 20 pies durante 20 segundos.")
+            Text("1. Estira tu mano y levanta tu dedo pulgar, observa tu dedo y enfocate en él.")
                 .font(.title3)
-                .padding(.horizontal,20)
+                //.padding(.horizontal,20)
                 .padding(.top,15)
-            Image(systemName: "stopwatch")
+                .padding(.leading,15)
+            
+            Text("2. Ahora enfoca algun objeto lejano que se encuentre detrás de tu pulgar.")
+                .font(.title3)
+               // .padding(.horizontal,20)
+                .padding(.top,15)
+                .padding(.leading,20)
+            Text("3. Repite el procedimiento para comprobar si no tienes problemas de acomodación visual.")
+                .font(.title3)
+                //.padding(.horizontal,20)
+                .padding(.top,15)
+                .padding(.leading,20)
+            Image(systemName: "target")
                 .resizable()
                 .foregroundStyle(Color.colorEyeGuard)
-                .frame(width: 80, height: 80)
+                .frame(width: 90, height: 90)
+                .padding(.top, 40)
             
             Spacer()
             Button(action: {
@@ -62,7 +75,6 @@ struct terapiaVeinte: View {
         }
     }
 }
-
 #Preview {
-    terapiaVeinte()
+    terapiaEnfoque()
 }

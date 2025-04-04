@@ -1,5 +1,5 @@
 //
-//  terapiaVeinte.swift
+//  terapiaPalma.swift
 //  EyeGuard
 //
 //  Created by Sistemas on 04/04/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct terapiaVeinte: View {
+struct terapiaPalma: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -15,19 +15,20 @@ struct terapiaVeinte: View {
             Image("logoEyeGuard")
                 .resizable()
                 .frame(width: 200, height: 200)
-            Text("Terapia 20-20-20")
+            Text("Palmeo relajante")
                 .bold()
                 .font(.title)
                 .foregroundStyle(Color.colorEyeGuard)
                 .padding(.top,20)
-            Text("Cada 20 minutos, mira a una distancia de 20 pies durante 20 segundos.")
+            Text("Cubre suavemente ambos ojos con las manos durante unos minutos para relajarlos.")
                 .font(.title3)
                 .padding(.horizontal,20)
                 .padding(.top,15)
-            Image(systemName: "stopwatch")
+            Image(systemName: "eye")
                 .resizable()
                 .foregroundStyle(Color.colorEyeGuard)
-                .frame(width: 80, height: 80)
+                .frame(width: 130, height: 90)
+                .padding(.top, 40)
             
             Spacer()
             Button(action: {
@@ -64,5 +65,5 @@ struct terapiaVeinte: View {
 }
 
 #Preview {
-    terapiaVeinte()
+    terapiaPalma()
 }
