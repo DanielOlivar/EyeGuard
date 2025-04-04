@@ -12,6 +12,9 @@ struct Settings: View {
         NavigationView{
             VStack{
                 Text("Aviso de Limitación de Responsabilidad")
+                    .foregroundStyle(Color.colorEyeGuard)
+                    .font(.footnote)
+                    .bold()
                 Text("Esta aplicación no sustituye la consulta con un especialista; sin embargo, puede ofrecerte información adicional y orientarte en tu bienestar visual, sirviendo como un complemento útil para tu atención médica.")
                     .font(.footnote)
                     .foregroundColor(.gray)

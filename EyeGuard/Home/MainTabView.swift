@@ -29,6 +29,18 @@ struct MainTabView: View {
                 }
         }
         .accentColor(.colorEyeGuard)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("EyeGuard")
+                        .font(.system(.title)) // Cambia el tamaño de la fuente
+                        .foregroundColor(.white) // Cambia el color del título
+                        .bold()
+                }
+            }
+            .toolbarBackground(Color.colorEyeGuard, for: .navigationBar)
+            .toolbarBackgroundVisibility(.visible)
     }
 }
 
